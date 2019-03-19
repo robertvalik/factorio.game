@@ -20,13 +20,18 @@ if [ ! -e $GAMEDATA_DIR/saves ]; then
 	ln -s $SAVEGAME_DIR/saves $GAMEDATA_DIR/saves
 fi
 
+if [ "$DONOTUSEADMINLIST" = "yes" ] ; then
+	ADMINLISTOPTION="--server-adminlist $SAVEGAME_DIR/server-adminlist.json"
+else
+	ADMINLISTOPTION=""
+fi
+
 $GAMEDATA_DIR/bin/x64/factorio \
 	-c $SAVEGAME_DIR/config/config.ini \
 	--start-server-load-latest $GAMEDATA_DIR/saves/$SAVEGAME_NAME.zip \
 	--server-settings $SAVEGAME_DIR/config/server-settings.json \
-	--server-adminlist $SAVEGAME_DIR/server-adminlist.json \
+	$ADMINLISTOPTION \
 	--mod-directory $SAVEGAME_DIR/mods/ \
 	--server-banlist $SAVEGAME_DIR/server-banlist.json \
-	--server-adminlist $SAVEGAME_DIR/server-adminlist.json \
 	--console-log $SAVEGAME_DIR/console.log
 

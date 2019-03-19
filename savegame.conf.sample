@@ -6,3 +6,6 @@ UPDATE="yes"
 
 # Run specific version (ingored if UPDATE=yes) - must be already downloaded!
 FACTORIO_VERSION=0.17.15
+
+# Do not use admin-list option - required if running pre-0.17 game.
+DONOTUSEADMINLIST="no"
