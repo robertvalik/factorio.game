@@ -1,0 +1,8 @@
+# Name of this game
+SAVEGAME_NAME="GameName"
+
+# Shoud we run factorio_updater.sh?
+UPDATE="yes"
+
+# Run specific version (ingored if UPDATE=yes) - must be already downloaded!
+FACTORIO_VERSION=0.17.15

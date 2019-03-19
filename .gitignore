@@ -1,0 +1,9 @@
+saves/*
+mods/*
+!*/.keep
+player-data.json
+savegame.conf
+console.*
+server-adminlist.json
+config/config.ini
+config/server-settings.json
