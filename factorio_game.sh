@@ -20,8 +20,24 @@ if [ ! -e $GAMEDATA_DIR/saves ]; then
 	ln -s $SAVEGAME_DIR/saves $GAMEDATA_DIR/saves
 fi
 
+if [ ! -e $SAVEGAME_DIR/player-data.json ]; then
+	touch $SAVEGAME_DIR/player-data.json
+fi
+
+if [ ! -e $GAMEDATA_DIR/player-data.json ]; then
+	ln -s $SAVEGAME_DIR/player-data.json $GAMEDATA_DIR/player-data.json
+fi
+
+if [ ! -e $SAVEGAME_DIR/server-adminlist.json ]; then
+	touch $SAVEGAME_DIR/server-adminlist.json
+fi
+
+if [ ! -e $GAMEDATA_DIR/server-adminlist.json ]; then
+	ln -s $SAVEGAME_DIR/server-adminlist.json $GAMEDATA_DIR/server-adminlist.json
+fi
+
 if [ "$DONOTUSEADMINLIST" = "yes" ] ; then
-	ADMINLISTOPTION="--server-adminlist $SAVEGAME_DIR/server-adminlist.json"
+	ADMINLISTOPTION="--server-adminlist $GAMEDATA_DIR/server-adminlist.json"
 else
 	ADMINLISTOPTION=""
 fi
