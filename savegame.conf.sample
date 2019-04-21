@@ -9,3 +9,6 @@ FACTORIO_VERSION=0.17.15
 
 # Do not use admin-list option - required if running pre-0.17 game.
 DONOTUSEADMINLIST="no"
+
+# Use Copy on Write (needs to be supported by underlying filesystem.
+COPY_OPTS="--reflink=always"
